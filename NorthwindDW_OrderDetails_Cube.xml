@@ -1,0 +1,192 @@
+<Schema name="NorthwindDW">
+  <Cube name="Cubo OrderDetails" visible="true" cache="true" enabled="true">
+    <Table name="ft_orderdetails">
+    </Table>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_orderDate" highCardinality="false" name="Date">
+      <Hierarchy name="OrderDate" visible="true" hasAll="true" primaryKey="id_orderDate">
+        <Table name="dt_orderdate">
+        </Table>
+        <Level name="Year" visible="true" column="year" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Quarter" visible="true" column="quarter" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Month" visible="true" column="month" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="OrderDate" visible="true" column="orderDate" type="Date" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_shipper" highCardinality="false" name="Shipper">
+      <Hierarchy name="Shipper" visible="true" hasAll="true" primaryKey="id_shipper">
+        <Table name="dt_shipper">
+        </Table>
+        <Level name="Shipper Company Name" visible="true" column="companyName" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="companyName">
+        </Level>
+        <Level name="Shipper Id" visible="true" column="id_shipper" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_customer" highCardinality="false" name="Customer">
+      <Hierarchy name="Customer" visible="true" hasAll="true" primaryKey="id_customer" primaryKeyTable="dt_customer">
+        <Join leftKey="customer_city" rightKey="id_city">
+          <Table name="dt_customer">
+          </Table>
+          <Table name="dt2_citycountry">
+          </Table>
+        </Join>
+        <Level name="Customer Country" visible="true" table="dt2_citycountry" column="country" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Customer City" visible="true" table="dt2_citycountry" column="city" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Customer CompanyName" visible="true" table="dt_customer" column="companyName" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="companyName">
+        </Level>
+        <Level name="Customer ContactName" visible="true" table="dt_customer" column="contactName" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="contactName">
+        </Level>
+        <Level name="Customer ContactTitle" visible="true" table="dt_customer" column="contactTitle" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="contactTitle">
+        </Level>
+        <Level name="Customer Address" visible="true" table="dt_customer" column="address" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="address">
+        </Level>
+        <Level name="Customer PostalCode" visible="true" table="dt_customer" column="postalCode" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="postalCode">
+        </Level>
+        <Level name="Customer" visible="true" table="dt_customer" column="customer" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_product" highCardinality="false" name="Product">
+      <Hierarchy name="Category" visible="true" hasAll="true" primaryKey="id_product">
+        <Table name="dt_product">
+        </Table>
+        <Level name="CategoryDescription" visible="true" column="categoryDescription" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="categoryDescription">
+        </Level>
+        <Level name="CategoryName" visible="true" column="categoryName" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="categoryName">
+        </Level>
+        <Level name="Category" visible="true" column="category" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Product Id" visible="true" column="id_product" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="QuantityPerUnit ProductName UnitPrice" visible="true" hasAll="true" primaryKey="id_product">
+        <Table name="dt_product">
+        </Table>
+        <Level name="ProductName" visible="true" column="productName" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="productName">
+        </Level>
+        <Level name="QuantityPerUnit" visible="true" column="quantityPerUnit" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="quantityPerUnit">
+        </Level>
+        <Level name="UnitPrice" visible="true" column="unitPrice" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="unitPrice">
+        </Level>
+        <Level name="Product Id" visible="true" column="id_product" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Discontinued" visible="true" hasAll="true" primaryKey="id_product">
+        <Table name="dt_product">
+        </Table>
+        <Level name="Discontinued" visible="true" column="discontinued" type="Boolean" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Product Id" visible="true" column="id_product" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Supplier" visible="true" hasAll="true" primaryKey="id_product" primaryKeyTable="dt_product">
+        <Join leftKey="supplier_city" rightKey="id_city">
+          <Table name="dt_product">
+          </Table>
+          <Table name="dt2_citycountry">
+          </Table>
+        </Join>
+        <Level name="Supplier Country" visible="true" table="dt2_citycountry" column="country" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Supplier City" visible="true" table="dt2_citycountry" column="city" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Supplier CompanyName" visible="true" table="dt_product" column="companyName" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="companyName">
+        </Level>
+        <Level name="Supplier ContactName" visible="true" table="dt_product" column="contactName" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="contactName">
+        </Level>
+        <Level name="Supplier ContactTitle" visible="true" table="dt_product" column="contactTitle" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="contactTitle">
+        </Level>
+        <Level name="Supplier Address" visible="true" table="dt_product" column="address" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="address">
+        </Level>
+        <Level name="Supplier PostalCode" visible="true" table="dt_product" column="postalCode" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="postalCode">
+        </Level>
+        <Level name="Supplier" visible="true" table="dt_product" column="supplier" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Product Id" visible="true" table="dt_product" column="id_product" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="RangeUnitPrice" visible="true" hasAll="true" primaryKey="id_product">
+        <Table name="dt_product">
+        </Table>
+        <Level name="RangeUnitPrice" visible="true" column="rangeUnitPrice" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Product Id" visible="true" column="id_product" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Dimension type="StandardDimension" visible="true" foreignKey="id_employee" highCardinality="false" name="Employee">
+      <Hierarchy name="Employee City" visible="true" hasAll="true" primaryKey="id_employee" primaryKeyTable="dt_employee">
+        <Join leftKey="employee_city" rightKey="id_city">
+          <Table name="dt_employee">
+          </Table>
+          <Table name="dt2_citycountry">
+          </Table>
+        </Join>
+        <Level name="Employee Country" visible="true" table="dt2_citycountry" column="country" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Employee City" visible="true" table="dt2_citycountry" column="city" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Employee Id" visible="true" table="dt_employee" column="id_employee" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Employee Sex" visible="true" hasAll="true" primaryKey="id_employee">
+        <Table name="dt_employee">
+        </Table>
+        <Level name="Employee Sex" visible="true" column="sex" type="String" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Employee Salary" visible="true" column="salary" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="salary">
+        </Level>
+        <Level name="Employee Address" visible="true" column="address" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="address">
+        </Level>
+        <Level name="Employee Title" visible="true" column="title" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="title">
+        </Level>
+        <Level name="Employee Name" visible="true" column="fullName" type="String" uniqueMembers="true" levelType="Regular" hideMemberIf="Never" captionColumn="fullName">
+        </Level>
+        <Level name="Employee Id" visible="true" column="id_employee" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Employee Supervisor" visible="true" hasAll="true" primaryKey="id_employee">
+        <Table name="dt_employee">
+        </Table>
+        <Level name="Employee" visible="true" column="id_employee" nameColumn="fullName" parentColumn="supervisor" nullParentValue="null" type="Integer" uniqueMembers="true" levelType="Regular" hideMemberIf="Never">
+          <Closure parentColumn="supervisor" childColumn="employee">
+            <Table name="navigate_employee">
+            </Table>
+          </Closure>
+        </Level>
+      </Hierarchy>
+      <Hierarchy name="Employee Territories" visible="true" hasAll="true" primaryKey="id_employee">
+        <Table name="view_bridge_table">
+        </Table>
+        <Level name="Region" visible="true" column="region" nameColumn="regionDescription" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Employee" visible="true" column="id_employee" nameColumn="fullName" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+        <Level name="Territory" visible="true" column="id_territory" nameColumn="territoryDescription" type="Integer" uniqueMembers="false" levelType="Regular" hideMemberIf="Never">
+        </Level>
+      </Hierarchy>
+    </Dimension>
+    <Measure name="Count" column="count" datatype="Integer" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Quantity SUM" column="quantity" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Quantity AVG" column="quantity" datatype="Numeric" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="Freight AVG" column="freight" datatype="Numeric" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="Freight SUM" column="freight" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="DaysToShip" column="daysToShip" datatype="Numeric" aggregator="avg" visible="true">
+    </Measure>
+    <Measure name="TotalPrice" column="totalPrice" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+    <Measure name="Price" column="price" datatype="Numeric" aggregator="sum" visible="true">
+    </Measure>
+  </Cube>
+</Schema>

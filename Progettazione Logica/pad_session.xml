@@ -1,0 +1,810 @@
+<list>
+  <string>1.0</string>
+  <org.pentaho.di.core.database.DatabaseMeta>  &lt;connection&gt;&#xd;
+    &lt;name&gt;Connessione_NorthwindDW&lt;/name&gt;&#xd;
+    &lt;server&gt;localhost&lt;/server&gt;&#xd;
+    &lt;type&gt;MYSQL&lt;/type&gt;&#xd;
+    &lt;access&gt;Native&lt;/access&gt;&#xd;
+    &lt;database&gt;northwind_dw&lt;/database&gt;&#xd;
+    &lt;port&gt;3306&lt;/port&gt;&#xd;
+    &lt;username&gt;root&lt;/username&gt;&#xd;
+    &lt;password&gt;Encrypted 2be98afc86aa7f289a215a764db80a1d3&lt;/password&gt;&#xd;
+    &lt;servername/&gt;&#xd;
+    &lt;data_tablespace/&gt;&#xd;
+    &lt;index_tablespace/&gt;&#xd;
+    &lt;attributes&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;FORCE_IDENTIFIERS_TO_LOWERCASE&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;FORCE_IDENTIFIERS_TO_UPPERCASE&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;PORT_NUMBER&lt;/code&gt;&lt;attribute&gt;3306&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;PRESERVE_RESERVED_WORD_CASE&lt;/code&gt;&lt;attribute&gt;Y&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;QUOTE_ALL_FIELDS&lt;/code&gt;&lt;attribute&gt;N&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;STREAM_RESULTS&lt;/code&gt;&lt;attribute&gt;Y&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;SUPPORTS_BOOLEAN_DATA_TYPE&lt;/code&gt;&lt;attribute&gt;Y&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+      &lt;attribute&gt;&lt;code&gt;SUPPORTS_TIMESTAMP_DATA_TYPE&lt;/code&gt;&lt;attribute&gt;Y&lt;/attribute&gt;&lt;/attribute&gt;&#xd;
+    &lt;/attributes&gt;&#xd;
+  &lt;/connection&gt;&#xd;
+</org.pentaho.di.core.database.DatabaseMeta>
+  <org.pentaho.aggdes.ui.ext.impl.MondrianFileSchemaModel>
+    <schemaChecksum>4240893095</schemaChecksum>
+    <mondrianSchemaFilename>D:\1997i\Desktop\Magistrale\esami\primo anno\primo semestre\Business Intelligence\progetto\NorthwindDW_OrderDetails_Cube.xml</mondrianSchemaFilename>
+    <cubeName>Cubo OrderDetails</cubeName>
+  </org.pentaho.aggdes.ui.ext.impl.MondrianFileSchemaModel>
+  <org.pentaho.aggdes.ui.model.impl.AggListImpl>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>view_customercity_productcategory</name>
+      <description>{[dt_orderdate].[Year], [dt_orderdate].[Quarter], [dt_employee].[Employee Sex]}</description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt2_citycountry].[Customer Country]</label>
+          <table>dt2_citycountry</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt2_citycountry].[Customer City]</label>
+          <table>dt2_citycountry</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_product].[CategoryDescription]</label>
+          <table>dt_product</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_product].[CategoryName]</label>
+          <table>dt_product</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_product].[Category]</label>
+          <table>dt_product</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>view_customercity_productcateg</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Customer_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Customer_City</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_CategoryDescription</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_CategoryName</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_Category</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.Count</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.Quantity SUM</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.Quantity AVG</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.Freight AVG</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.Freight SUM</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_DaysToShip</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.DaysToShip</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_TotalPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.TotalPrice</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Price</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.Price</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure">
+              <label>ft_orderdetails.fact_count</label>
+              <table>ft_orderdetails</table>
+            </attribute>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>2155.0</estimateRowCount>
+      <estimateSpace>181020.0</estimateSpace>
+    </aggregation>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>view_month_shipper</name>
+      <description>{[dt_shipper].[Shipper Company Name], [dt_shipper].[Shipper Id], [dt_employee].[Employee Sex]}</description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_orderdate].[Year]</label>
+          <table>dt_orderdate</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_orderdate].[Quarter]</label>
+          <table>dt_orderdate</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_orderdate].[Month]</label>
+          <table>dt_orderdate</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_shipper].[Shipper Company Name]</label>
+          <table>dt_shipper</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_shipper].[Shipper Id]</label>
+          <table>dt_shipper</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>view_month_shipper</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Year</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Quarter</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Month</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_shipper_Shipper_Company_Nam</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_shipper_Shipper_Id</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_DaysToShip</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_TotalPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Price</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>1050.4286861740425</estimateRowCount>
+      <estimateSpace>54622.29168105021</estimateSpace>
+    </aggregation>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>view_customercity_rangeunitprice</name>
+      <description>{[dt2_citycountry].[Customer Country], [dt_product].[Discontinued], [dt_employee].[Employee Sex], [view_bridge_table].[Region (Key)]}</description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_product].[RangeUnitPrice]</label>
+          <table>dt_product</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>view_customercity_rangeunitpri</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Customer_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Customer_City</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_RangeUnitPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_DaysToShip</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_TotalPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Price</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>1862.5143851895282</estimateRowCount>
+      <estimateSpace>111750.8631113717</estimateSpace>
+    </aggregation>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>view_customer_productdiscontinued</name>
+      <description>{[dt_orderdate].[Year], [dt_orderdate].[Quarter], [dt_orderdate].[Month]}</description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_customer].[Customer CompanyName]</label>
+          <table>dt_customer</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_customer].[Customer ContactName]</label>
+          <table>dt_customer</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_customer].[Customer ContactTitle]</label>
+          <table>dt_customer</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_customer].[Customer Address]</label>
+          <table>dt_customer</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_customer].[Customer PostalCode]</label>
+          <table>dt_customer</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_customer].[Customer]</label>
+          <table>dt_customer</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_product].[Discontinued]</label>
+          <table>dt_product</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>view_customer_productdiscontin</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Customer_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Customer_City</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_customer_Customer_CompanyNa</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_customer_Customer_ContactNa</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_customer_Customer_ContactTi</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_customer_Customer_Address</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[6]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_customer_Customer_PostalCod</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[7]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_customer_Customer</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[8]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_Discontinued</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[9]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_DaysToShip</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_TotalPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Price</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>2155.0</estimateRowCount>
+      <estimateSpace>346955.0</estimateSpace>
+    </aggregation>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>view_orderdate_customercountry_product_employee</name>
+      <description></description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_orderdate].[OrderDate]</label>
+          <table>dt_orderdate</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_product].[Product Id]</label>
+          <table>dt_product</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt2_citycountry].[Employee Country]</label>
+          <table>dt2_citycountry</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt2_citycountry].[Employee City]</label>
+          <table>dt2_citycountry</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[dt_employee].[Employee Id]</label>
+          <table>dt_employee</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>view_orderdate_customercountry</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Year</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Quarter</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Month</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_OrderDate</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Customer_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_CategoryDescription</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_CategoryName</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_Category</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_Product_Id</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[9]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Employee_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[10]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Employee_City</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[11]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_employee_Employee_Id</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[12]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_DaysToShip</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_TotalPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Price</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>2155.0</estimateRowCount>
+      <estimateSpace>310320.0</estimateSpace>
+    </aggregation>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>view_quarter_shipper_employee</name>
+      <description></description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[5]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[10]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[5]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[11]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[5]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[12]"/>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>view_quarter_shipper_employee</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Year</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Quarter</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[2]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_shipper_Shipper_Company_Nam</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_shipper_Shipper_Id</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Employee_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[5]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[10]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt2_citycountry_Employee_City</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[5]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[11]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_employee_Employee_Id</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[5]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[12]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_DaysToShip</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_TotalPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Price</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>2155.0</estimateRowCount>
+      <estimateSpace>163780.0</estimateSpace>
+    </aggregation>
+    <aggregation>
+      <algoAgg>false</algoAgg>
+      <name>view_year_rangeunitprice_territory</name>
+      <description></description>
+      <attributes>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute reference="../../../aggregation[3]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[view_bridge_table].[Region (Key)]</label>
+          <table>view_bridge_table</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[view_bridge_table].[Employee (Key)]</label>
+          <table>view_bridge_table</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+        <org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+          <label>[view_bridge_table].[Territory (Key)]</label>
+          <table>view_bridge_table</table>
+        </org.pentaho.aggdes.model.mondrian.MondrianAttribute>
+      </attributes>
+      <output class="org.pentaho.aggdes.output.impl.AggregateTableOutput">
+        <tableName>view_year_rangeunitprice_terri</tableName>
+        <aggregate class="org.pentaho.aggdes.ui.model.impl.UIAggregateImpl" reference="../.."/>
+        <columns>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_orderdate_Year</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[2]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>dt_product_RangeUnitPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../../aggregation[3]/attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>view_bridge_table_Region_(Key)</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[3]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>view_bridge_table_Employee_(Ke</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[4]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>view_bridge_table_Territory_(K</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianAttribute" reference="../../../../attributes/org.pentaho.aggdes.model.mondrian.MondrianAttribute[5]"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Quantity_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_AVG</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Freight_SUM</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_DaysToShip</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_TotalPrice</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_Price</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+          <org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+            <name>ft_orderdetails_fact_count</name>
+            <attribute class="org.pentaho.aggdes.model.mondrian.MondrianMeasure" reference="../../../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+          </org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput>
+        </columns>
+      </output>
+      <measures>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[6]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[7]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[8]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[9]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[10]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[11]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[12]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[13]/attribute"/>
+        <org.pentaho.aggdes.model.mondrian.MondrianMeasure reference="../../../aggregation/output/columns/org.pentaho.aggdes.output.impl.AggregateTableOutput_-ColumnOutput[14]/attribute"/>
+      </measures>
+      <enabled>true</enabled>
+      <estimateRowCount>2012.4178617587077</estimateRowCount>
+      <estimateSpace>72447.04302331348</estimateSpace>
+    </aggregation>
+  </org.pentaho.aggdes.ui.model.impl.AggListImpl>
+</list>
